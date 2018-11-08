@@ -1,1 +1,7 @@
+#Jack Robey and Aidan Marshall
+#11/8/18]
+#Calculus Project Quarter 2
 
+function = float(input('Enter a function: '))
+interval1 = float(input('Enter the starting value of the interval: '))
+interval = float(input('Enter the starting value of the interval: ')) 
