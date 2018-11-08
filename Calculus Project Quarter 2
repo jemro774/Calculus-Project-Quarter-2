@@ -1,7 +1,17 @@
 #Jack Robey and Aidan Marshall
-#11/8/18]
+#11/8/18
 #Calculus Project Quarter 2
 
-function = float(input('Enter a function: '))
-interval1 = float(input('Enter the starting value of the interval: '))
-interval = float(input('Enter the starting value of the interval: ')) 
+function = input('Enter a funcrion: ')
+
+
+
+
+
+"""terms = int(input("Enter the function's number of terms: "))
+
+for i in range(1,terms+1):
+    coefficient = 
+
+interval1 = float(input('Enter the start value of the interval: '))
+interval2 = float(input('Enter the end value of the interval: ')) """
