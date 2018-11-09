@@ -2,7 +2,14 @@
 #11/8/18
 #Calculus Project Quarter 2
 
-function = input('Enter a funcrion: ')
+function = input('Enter a function: ')
+interval1 = input('Enter the lowest value of the closed interval: ')
+interval2 = input('Enter the highest value of the closed interval: ')
+
+eval(function)
+
+'''for i in range(interval1,interval2+1):
+    
 
 
 
