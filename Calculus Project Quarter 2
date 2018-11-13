@@ -34,31 +34,40 @@ for i in range(interval1,interval2+1):
     if derivative < 0:
         list2.append(i)
 
-if len(list1) == 0 and len(list2) != 0:
+if len(list1) != 0 and len(list2) == 0:
+    list1.sort()
+    xIncrease1 = list1[0]
+    y = len(list1)-1
+    xIncrease2 = list1[y]
+    if xIncrease1 > 0 and xIncrease2 > 0:
+        print('The function is increasing from x =',xIncrease1-1,'to x =',xIncrease2)
+    elif xIncrease1 < 0 and xIncrease2 < 0:
+        print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2+1)
+    print('The function never decreases in the interval')
+elif len(list1) == 0 and len(list2) != 0:
     list2.sort()
     xIncrease3 = list2[0]
     z = len(list1)-1
     xIncrease4 = list2[z]
     print('The function is decreasing from x =',xIncrease3,'to x =',xIncrease4)
     print('The function never increases in the interval')
-elif len(list1) != 0 and len(list2) == 0:
-    list1.sort()
-    xIncrease1 = list1[0]
-    y = len(list1)-1
-    xIncrease2 = list1[y]
-    print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
-    print('The function never decreases in the interval')
 elif len(list1) != 0 and len(list2) != 0:
     list1.sort()
     xIncrease1 = list1[0]
     y = len(list1)-1
     xIncrease2 = list1[y]
-    print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
+    if xIncrease1 > 0 and xIncrease2 > 0:
+        print('The function is increasing from x =',xIncrease1-1,'to x =',xIncrease2)
+    elif xIncrease1 < 0 and xIncrease2 < 0:
+        print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2+1)
     list2.sort()
     xIncrease3 = list2[0]
     z = len(list1)-1
     xIncrease4 = list2[z]
-    print('The function is decreasing from x =',xIncrease3,'to x =',xIncrease4)
+    if xIncrease3 < 0 and xIncrease4 < 0:
+        print('The function is decreasing from x =',xIncrease3,'to x =',xIncrease4+1)
+    elif xIncrease3 > 0 and xIncrease4 > 0:
+        print('The function is decreasing from x =',xIncrease3-1,'to x =',xIncrease4)
 else:
     print('There is no maximum or minimum in the interval')
     print('The function never increases nor decreases in the interval')
