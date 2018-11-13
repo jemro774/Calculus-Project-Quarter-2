@@ -11,4 +11,19 @@ for i in range(interval1,interval2+1):
     more = eval(function)
     x = i-0.001
     less = eval(function)
-    print((more-less)/0.002)
+    derivative = ((more-less)/0.002)
+    if derivative == 0:
+        x = i-0.999
+        more1 = eval(function)
+        x = i-1.001
+        less1 = eval(function)
+        derivative1 = ((more1-less1)/0.002)
+        x = i+1.001
+        more2 = eval(function)
+        x = i+0.999
+        less2 = eval(function)
+        derivative2 = ((more2-less2)/0.002)
+        if derivative1 > 0 and derivative2 < 0:
+            print('There is a maximum at',i)
+        if derivative1 < 0 and derivative2 > 0:
+            print('There is a minimum at',i)
