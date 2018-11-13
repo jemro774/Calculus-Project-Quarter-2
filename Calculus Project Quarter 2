@@ -27,3 +27,4 @@ for i in range(interval1,interval2+1):
             print('There is a maximum at',i)
         if derivative1 < 0 and derivative2 > 0:
             print('There is a minimum at',i)
+    if 
