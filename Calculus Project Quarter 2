@@ -43,6 +43,8 @@ if len(list1) != 0 and len(list2) == 0:
         print('The function is increasing from x =',xIncrease1-1,'to x =',xIncrease2)
     elif xIncrease1 < 0 and xIncrease2 < 0:
         print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2+1)
+    elif xIncrease1 < 0 and xIncrease2 > 0:
+        print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
     print('The function never decreases in the interval')
 elif len(list1) == 0 and len(list2) != 0:
     list2.sort()
@@ -63,6 +65,8 @@ elif len(list1) != 0 and len(list2) != 0:
         print('The function is increasing from x =',xIncrease1-1,'to x =',xIncrease2)
     elif xIncrease1 < 0 and xIncrease2 < 0:
         print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2+1)
+    elif xIncrease1 < 0 and xIncrease2 > 0:
+        print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
     list2.sort()
     xIncrease3 = list2[0]
     z = len(list1)-1
