@@ -3,8 +3,8 @@
 #Calculus Project Quarter 2
 
 function = input('Enter a function: ')
-interval1 = int(input('Enter the lowest value of the closed interval: '))
-interval2 = int(input('Enter the highest value of the closed interval: '))
+interval1 = int(input('Enter the first value of the closed interval: '))
+interval2 = int(input('Enter the last value of the closed interval: '))
 
 for i in range(interval1,interval2+1):
     x = i+0.001
@@ -25,7 +25,7 @@ for i in range(interval1,interval2+1):
         derivative2 = ((more2-less2)/0.002)
         if derivative1 > 0 and derivative2 < 0:
             print('There is a maximum at',i)
-        if derivative1 < 0 and derivative2 > 0:
+        elif derivative1 < 0 and derivative2 > 0:
             print('There is a minimum at',i)
     list1 = []
     if derivative > 0:
