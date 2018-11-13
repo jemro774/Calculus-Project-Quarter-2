@@ -35,7 +35,7 @@ for i in range(interval1,interval2+1):
         list2.append(i)
 
 list1.sort()
-xIncrease1 = list1[0]-1
+xIncrease1 = list1[0]
 y = len(list1)-1
 xIncrease2 = list1[y]
 print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
