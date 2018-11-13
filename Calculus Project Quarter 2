@@ -27,4 +27,25 @@ for i in range(interval1,interval2+1):
             print('There is a maximum at',i)
         if derivative1 < 0 and derivative2 > 0:
             print('There is a minimum at',i)
-    if 
+    list1 = []
+    if derivative > 0:
+        list1.append(i)
+    list2 = []
+    if derivative < 0:
+        list2.append(i)
+
+print(list1)
+print(list2)
+    
+
+'''list1.sort()
+xIncrease1 = list1[0]
+y = len(list1)-1
+xIncrease2 = list1[y]
+print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
+
+list2.sort()
+xIncrease3 = list1[0]
+z = len(list1)-1
+xIncrease4 = list1[z]
+print('The function is increasing from x =',xIncrease3,'to x =',xIncrease4)'''
