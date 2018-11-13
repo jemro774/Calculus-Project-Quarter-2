@@ -34,14 +34,26 @@ for i in range(interval1,interval2+1):
     if derivative < 0:
         list2.append(i)
 
-list1.sort()
-xIncrease1 = list1[0]
-y = len(list1)-1
-xIncrease2 = list1[y]
-print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
-
-list2.sort()
-xIncrease3 = list2[0]
-z = len(list1)-1
-xIncrease4 = list2[z]
-print('The function is decreasing from x =',xIncrease3,'to x =',xIncrease4)
+if len(list1) == 0 and len(list2) != 0:
+    list2.sort()
+    xIncrease3 = list2[0]
+    z = len(list1)-1
+    xIncrease4 = list2[z]
+    print('The function is decreasing from x =',xIncrease3,'to x =',xIncrease4)
+elif len(list1) != 0 and len(list2) == 0:
+    list1.sort()
+    xIncrease1 = list1[0]
+    y = len(list1)-1
+    xIncrease2 = list1[y]
+    print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
+elif len(list1) != 0 and len(list2) != 0:
+    list1.sort()
+    xIncrease1 = list1[0]
+    y = len(list1)-1
+    xIncrease2 = list1[y]
+    print('The function is increasing from x =',xIncrease1,'to x =',xIncrease2)
+    list2.sort()
+    xIncrease3 = list2[0]
+    z = len(list1)-1
+    xIncrease4 = list2[z]
+    print('The function is decreasing from x =',xIncrease3,'to x =',xIncrease4)
