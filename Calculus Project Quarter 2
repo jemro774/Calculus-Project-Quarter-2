@@ -34,7 +34,8 @@ for i in range(interval1,interval2+1):
     if derivative < 0:
         list2.append(i)
 
-if len(list1) != 0 and len(list2) == 0:
+
+'''if len(list1) != 0 and len(list2) == 0:
     list1.sort()
     xIncrease1 = list1[0]
     y = len(list1)-1
