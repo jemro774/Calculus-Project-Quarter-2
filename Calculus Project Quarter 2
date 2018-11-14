@@ -39,27 +39,35 @@ for i in range(interval1,interval2+1):
             y = eval(function)
             list4.append(y)
             list6.append(i)
+        elif i == interval1 and dervative2 < 0:
+            x = i
+            y = eval(function)
+            list3.append(y)
+            list5.append(i)
+        elif i == interval1 and dervative2 > 0:
+            x = i
+            y = eval(function)
+            list4.append(y)
+            list6.append(i)
+        elif i == interval2 and dervative2 < 0:
+            x = i
+            y = eval(function)
+            list3.append(y)
+            list5.append(i)
     if derivative > 0:
         list1.append(i)
     if derivative < 0:
         list2.append(i)
 
-x = interval1
-endpoint1 = eval(function)
-x = interval2
-endpoint2 = eval(function)
-
-if endpoint1 > endpoint2:
-    list3.append(endpoint1)
-    list4.append(endpoint2)
-    list5.append(interval1)
-    list6.append(interval2)
-    absMax = max(list3)
-    absMin = min(list4)
-    for j in range(0,len(list3)):
-        if list3[j] == absMax:
-            d = j
-    print('There is an absolute maximum at x =',list5[d])
+absMax = max(list3)
+absMin = min(list4)
+for j in range(0,len(list3)):
+    if list3[j] == absMax:
+        d = j
+print('There is an absolute maximum at x =',list5[d])
+list5.remove(list5[d])
+for i in range(0,len(list5)):
+    print('There is a relative maximum at x =',list5[i])
     
 
 
