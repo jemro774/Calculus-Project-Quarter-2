@@ -77,9 +77,9 @@ for k in range(0,len(list4)):
     if list4[k] == absMin:
         e = k
 print('There is an absolute minimum at x =',list6[e])
-list5.remove(list6[e])
+list6.remove(list6[e])
 for i in range(0,len(list6)):
-    print('There is a relative maximum at x =',list6[i])
+    print('There is a relative minimum at x =',list6[i])
     
 
 
