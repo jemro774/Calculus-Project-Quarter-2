@@ -40,7 +40,19 @@ for i in range(interval1,interval2+1):
     if derivative < 0:
         list2.append(i)
 
+x = interval1
+endpoint1 = eval(function)
+x = interval2
+endpoint2 = eval(function)
 
+if endpoint1 > endpoint2:
+    list3.append(endpoint1)
+    list4.append(endpoint2)
+    list3.sort()
+    list4.sort()
+    j = len(list3)
+    k = len(list4)
+    
 
 
 if len(list1) != 0 and len(list2) == 0:
