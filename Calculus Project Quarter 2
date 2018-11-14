@@ -18,17 +18,17 @@ for i in range(interval1,interval2+1):
     x = i-0.001
     less = eval(function)
     derivative = ((more-less)/0.002)
+    x = i-0.999
+    more1 = eval(function)
+    x = i-1.001
+    less1 = eval(function)
+    derivative1 = ((more1-less1)/0.002)
+    x = i+1.001
+    more2 = eval(function)
+    x = i+0.999
+    less2 = eval(function)
+    derivative2 = ((more2-less2)/0.002)
     if derivative == 0:
-        x = i-0.999
-        more1 = eval(function)
-        x = i-1.001
-        less1 = eval(function)
-        derivative1 = ((more1-less1)/0.002)
-        x = i+1.001
-        more2 = eval(function)
-        x = i+0.999
-        less2 = eval(function)
-        derivative2 = ((more2-less2)/0.002)
         if derivative1 > 0 and derivative2 < 0:
             x = i
             y = eval(function)
@@ -39,21 +39,26 @@ for i in range(interval1,interval2+1):
             y = eval(function)
             list4.append(y)
             list6.append(i)
-        elif i == interval1 and dervative2 < 0:
-            x = i
-            y = eval(function)
-            list3.append(y)
-            list5.append(i)
-        elif i == interval1 and dervative2 > 0:
-            x = i
-            y = eval(function)
-            list4.append(y)
-            list6.append(i)
-        elif i == interval2 and dervative2 < 0:
-            x = i
-            y = eval(function)
-            list3.append(y)
-            list5.append(i)
+    if i == interval1 and derivative2 < 0:
+        x = interval1
+        y = eval(function)
+        list3.append(y)
+        list5.append(i)
+    elif i == interval1 and derivative2 > 0:
+        x = interval1
+        y = eval(function)
+        list4.append(y)
+        list6.append(i)
+    elif i == interval2 and derivative1 < 0:
+        x = interval2
+        y = eval(function)
+        list4.append(y)
+        list6.append(i)
+    elif i == interval2 and derivative1 > 0:
+        x = interval2
+        y = eval(function)
+        list3.append(y)
+        list5.append(i)
     if derivative > 0:
         list1.append(i)
     if derivative < 0:
@@ -68,6 +73,13 @@ print('There is an absolute maximum at x =',list5[d])
 list5.remove(list5[d])
 for i in range(0,len(list5)):
     print('There is a relative maximum at x =',list5[i])
+for k in range(0,len(list4)):
+    if list4[k] == absMin:
+        e = k
+print('There is an absolute minimum at x =',list6[e])
+list5.remove(list6[e])
+for i in range(0,len(list6)):
+    print('There is a relative maximum at x =',list6[i])
     
 
 
