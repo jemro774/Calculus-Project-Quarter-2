@@ -12,20 +12,23 @@ list3 = []
 list4 = []
 list5 = []
 list6 = []
-for i in range(interval1,interval2+1):
+
+i = interval1-0.1
+while i <= interval2:
+    i = i + 0.1
     x = i+0.001
     more = eval(function)
     x = i-0.001
     less = eval(function)
     derivative = ((more-less)/0.002)
-    x = i-0.999
+    x = i-0.099
     more1 = eval(function)
-    x = i-1.001
+    x = i-0.101
     less1 = eval(function)
     derivative1 = ((more1-less1)/0.002)
-    x = i+1.001
+    x = i+0.101
     more2 = eval(function)
-    x = i+0.999
+    x = i+0.099
     less2 = eval(function)
     derivative2 = ((more2-less2)/0.002)
     if derivative == 0:
@@ -64,6 +67,8 @@ for i in range(interval1,interval2+1):
     if derivative < 0:
         list2.append(i)
 
+print(list3)
+print(list4)
 absMax = max(list3)
 absMin = min(list4)
 for j in range(0,len(list3)):
