@@ -56,13 +56,12 @@ if endpoint1 > endpoint2:
     list6.append(interval2)
     absMax = max(list3)
     absMin = min(list4)
-    for j in range(0,len(list3):
-        if list3[j] == absMax:
-            
+    list3[j] == absMax:
+    print('There is an absolute maximum at x =',list5[j])
     
 
 
-if len(list1) != 0 and len(list2) == 0:
+'''if len(list1) != 0 and len(list2) == 0:
     list1.sort()
     xIncrease1 = list1[0]
     y = len(list1)-1
