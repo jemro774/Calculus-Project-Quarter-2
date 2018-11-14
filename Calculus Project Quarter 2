@@ -58,7 +58,7 @@ if endpoint1 > endpoint2:
     absMin = min(list4)
     for j in range(0,len(list3)):
         if list3[j] == absMax:
-            j = d
+            d = j
     print('There is an absolute maximum at x =',list5[d])
     
 
