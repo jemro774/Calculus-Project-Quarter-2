@@ -8,6 +8,8 @@ interval2 = int(input('Enter the last value of the closed interval: '))
 
 list1 = []
 list2 = []
+list3 = []
+list4 = []
 for i in range(interval1,interval2+1):
     x = i+0.001
     more = eval(function)
@@ -26,16 +28,22 @@ for i in range(interval1,interval2+1):
         less2 = eval(function)
         derivative2 = ((more2-less2)/0.002)
         if derivative1 > 0 and derivative2 < 0:
-            print('There is a maximum at',i)
+            x = i
+            y = eval(function)
+            list3.append(y)
         elif derivative1 < 0 and derivative2 > 0:
-            print('There is a minimum at',i)
+            x = i
+            y = eval(function)
+            list4.append(y)
     if derivative > 0:
         list1.append(i)
     if derivative < 0:
         list2.append(i)
 
 
-'''if len(list1) != 0 and len(list2) == 0:
+
+
+if len(list1) != 0 and len(list2) == 0:
     list1.sort()
     xIncrease1 = list1[0]
     y = len(list1)-1
