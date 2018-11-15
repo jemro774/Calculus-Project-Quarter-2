@@ -74,7 +74,9 @@ for j in range(0,len(list3)):
         d = j
 print('There is an absolute maximum at x =',round(list5[d],2))
 list5.remove(list5[d])
-for i in range(0,len(list5)):
+for i in range(0,len(list3)):
+    if list3[i] == absMax:
+        print('There is an absolute maximum at x =',round(list5[i],2))
     print('There is a relative maximum at x =',round(list5[i],2))
 for k in range(0,len(list4)):
     if list4[k] == absMin:
@@ -84,7 +86,8 @@ list6.remove(list6[e])
 for i in range(0,len(list6)):
     print('There is a relative minimum at x =',round(list6[i],2))
     
-
+'''for i in range(0,len(list1)-1):
+    if i - i'''
 
 if len(list1) != 0 and len(list2) == 0:
     list1.sort()
