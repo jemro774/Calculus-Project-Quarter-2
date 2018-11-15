@@ -13,53 +13,53 @@ list4 = []
 list5 = []
 list6 = []
 
-i = interval1-0.1
-while i <= interval2-0.1:
-    i = i + 0.1
+i = interval1-0.01
+while i <= interval2-0.01:
+    i = round(i + 0.01,2)
     x = i+0.001
     more = eval(function)
     x = i-0.001
     less = eval(function)
     derivative = round(((more-less)/0.002),1)
-    x = i-0.099
+    x = i-0.009
     more1 = eval(function)
-    x = i-0.101
+    x = i-0.011
     less1 = eval(function)
-    derivative1 = round(((more1-less1)/0.002),1)
-    x = i+0.101
+    derivative1 = round(((more1-less1)/0.002),2)
+    x = i+0.011
     more2 = eval(function)
-    x = i+0.099
+    x = i+0.009
     less2 = eval(function)
-    derivative2 = round(((more2-less2)/0.002),1)
+    derivative2 = round(((more2-less2)/0.002),2)
     if derivative == 0:
         if derivative1 > 0 and derivative2 < 0:
             x = i
-            y = round(eval(function),1)
+            y = round(eval(function),2)
             list3.append(y)
             list5.append(i)
         elif derivative1 < 0 and derivative2 > 0:
             x = i
-            y = round(eval(function),1)
+            y = round(eval(function),2)
             list4.append(y)
             list6.append(i)
     if i == interval1 and derivative2 < 0:
         x = interval1
-        y = round(eval(function),1)
+        y = round(eval(function),2)
         list3.append(y)
         list5.append(i)
     elif i == interval1 and derivative2 > 0:
         x = interval1
-        y = round(eval(function),1)
+        y = round(eval(function),2)
         list4.append(y)
         list6.append(i)
     elif i == interval2 and derivative1 < 0:
         x = interval2
-        y = round(eval(function),1)
+        y = round(eval(function),2)
         list4.append(y)
         list6.append(i)
     elif i == interval2 and derivative1 > 0:
         x = interval2
-        y = round(eval(function),1)
+        y = round(eval(function),2)
         list3.append(y)
         list5.append(i)
     if derivative > 0:
@@ -67,24 +67,22 @@ while i <= interval2-0.1:
     if derivative < 0:
         list2.append(i)
 
-print(list3)
-print(list4)
 absMax = max(list3)
 absMin = min(list4)
 for j in range(0,len(list3)):
     if list3[j] == absMax:
         d = j
-print('There is an absolute maximum at x =',list5[d])
+print('There is an absolute maximum at x =',round(list5[d],2))
 list5.remove(list5[d])
 for i in range(0,len(list5)):
-    print('There is a relative maximum at x =',list5[i])
+    print('There is a relative maximum at x =',round(list5[i],2))
 for k in range(0,len(list4)):
     if list4[k] == absMin:
         e = k
-print('There is an absolute minimum at x =',list6[e])
+print('There is an absolute minimum at x =',round(list6[e],2))
 list6.remove(list6[e])
 for i in range(0,len(list6)):
-    print('There is a relative minimum at x =',list6[i])
+    print('There is a relative minimum at x =',round(list6[i],2))
     
 
 
