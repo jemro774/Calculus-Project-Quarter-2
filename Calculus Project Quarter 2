@@ -12,6 +12,8 @@ list3 = []
 list4 = []
 list5 = []
 list6 = []
+list7 = []
+list8 = []
 
 i = interval1-0.01
 while i <= interval2-0.01:
@@ -72,22 +74,24 @@ absMin = min(list4)
 for j in range(0,len(list3)):
     if list3[j] == absMax:
         d = j
-print('There is an absolute maximum at x =',round(list5[d],2))
-list5.remove(list5[d])
-for i in range(0,len(list3)):
-    if list3[i] == absMax:
-        print('There is an absolute maximum at x =',round(list5[i],2))
-    print('There is a relative maximum at x =',round(list5[i],2))
+        list7.append(round(list5[d],2))
+print()
+print('Absolute maximum(s) (ignore brackets): x =',list7)
+print()
+print('Local maximum(s) (ignore brackets): x =',list5)
 for k in range(0,len(list4)):
     if list4[k] == absMin:
         e = k
-print('There is an absolute minimum at x =',round(list6[e],2))
-list6.remove(list6[e])
-for i in range(0,len(list6)):
-    print('There is a relative minimum at x =',round(list6[i],2))
+        list8.append(round(list6[e],2))
+print()
+print('Absolute minimum(s) (ignore brackets): x =',list8)
+print()
+print('Local minimum(s) (ignore brackets): x =',list6)
     
-'''for i in range(0,len(list1)-1):
-    if i - i'''
+'''for i in range(0,len(list5)):
+    sort(list5)
+    if list5[i]-list5[i-1] > 1:'''
+        
 
 if len(list1) != 0 and len(list2) == 0:
     list1.sort()
@@ -133,3 +137,7 @@ elif len(list1) != 0 and len(list2) != 0:
 else:
     print('There is no maximum or minimum in the interval')
     print('The function never increases nor decreases in the interval')
+
+
+
+
