@@ -39,32 +39,32 @@ while i <= interval2-0.01:
     if derivative == 0:
         if derivative1 > 0 and derivative2 < 0:
             x = i
-            y = round(eval(function),2)
+            y = round(eval(function),1)
             list3.append(y)
             list5.append(i)
         elif derivative1 < 0 and derivative2 > 0:
             x = i
-            y = round(eval(function),2)
+            y = round(eval(function),1)
             list4.append(y)
             list6.append(i)
     if i == interval1 and derivative2 < 0:
         x = interval1
-        y = round(eval(function),2)
+        y = round(eval(function),1)
         list3.append(y)
         list5.append(i)
     elif i == interval1 and derivative2 > 0:
         x = interval1
-        y = round(eval(function),2)
+        y = round(eval(function),1)
         list4.append(y)
         list6.append(i)
     elif i == interval2 and derivative1 < 0:
         x = interval2
-        y = round(eval(function),2)
+        y = round(eval(function),1)
         list4.append(y)
         list6.append(i)
     elif i == interval2 and derivative1 > 0:
         x = interval2
-        y = round(eval(function),2)
+        y = round(eval(function),1)
         list3.append(y)
         list5.append(i)
     if derivative >= 0:
@@ -78,7 +78,7 @@ absMin = min(list4)
 for j in range(0,len(list3)):
     if list3[j] == absMax:
         d = j
-        list7.append(round(list5[d],2))
+        list7.append(round(list5[d],1))
 print()
 print('Absolute maximum(s) (ignore brackets): x =',list7)
 print()
@@ -87,7 +87,7 @@ print('Local maximum(s) (ignore brackets): x =',list5)
 for k in range(0,len(list4)):
     if list4[k] == absMin:
         e = k
-        list8.append(round(list6[e],2))
+        list8.append(round(list6[e],1))
 print()
 print('Absolute minimum(s) (ignore brackets): x =',list8)
 print()
@@ -96,17 +96,28 @@ print('Local minimum(s) (ignore brackets): x =',list6)
 list1.sort()
 list2.sort()
 
-print()
-print('Increasing: x = [',round(list1[0],1),',',round(list1[len(list1)-1],1),']')
-print()
-print('Decreasing: x = [',round(list2[0],1),',',round(list2[len(list2)-1],1),']')
-
+newList1 = []
 for i in range(0,len(list1)):
     if list1[i]-list1[i-1] > 0.1:
         newList1 = list1[i:]
+        print()
+        print('Increasing: x = [',round(list1[0],1),',',round(list1[i-1],1),']')
+        print()
         print('Increasing: x = [',round(newList1[0],1),',',round(newList1[len(newList1)-1],1),']')
 
+if len(newList1) == 0:
+    print()
+    print('Increasing: x = [',round(list1[0],1),',',round(list1[len(list1)-1],1),']')
+
+newList2 = []
 for i in range(0,len(list2)):
     if list2[i]-list2[i-1] > 0.1:
         newList2 = list2[i:]
+        print()
+        print('Decreasing: x = [',round(list2[0],1),',',round(list2[i-1],1),']')
+        print()
         print('Decreasing: x = [',round(newList2[0],1),',',round(newList2[len(newList2)-1],1),']')
+
+if len(newList2) == 0:
+    print()
+    print('Decreasing: x = [',round(list2[0],1),',',round(list2[len(list2)-1],1),']')
