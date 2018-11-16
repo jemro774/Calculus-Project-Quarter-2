@@ -17,6 +17,7 @@ list6 = []
 list7 = []
 list8 = []
 list9 = []
+list10 = []
 
 i = interval1-0.01
 while i <= interval2-0.01:
@@ -71,6 +72,29 @@ while i <= interval2-0.01:
         list1.append(i)
     if derivative <= 0:
         list2.append(i)
+    x = derivative+0.001
+    more3 = eval(function)
+    x = derivative-0.001
+    less3 = eval(function)
+    secondDerivative = round(((more3-less3)/0.002),1)
+    x = derivative-0.009
+    more4 = eval(function)
+    x = derivative-0.011
+    less4 = eval(function)
+    secondDerivative1 = round(((more4-less4)/0.002),2)
+    x = derivative+0.011
+    more5 = eval(function)
+    x = derivative+0.009
+    less5 = eval(function)
+    secondDerivative2 = round(((more5-less5)/0.002),2)
+    if secondDerivative == 0:
+        if secondDerivative1 > 0 and secondDerivative2 < 0:
+            list10.append(i)
+        if secondDerivative1 < 0 and secondDerivative2 > 0:
+            list10.append(i)
+    
+print()
+print('Point of inflection(s) (ignore brackets): x =',list10)
 
 absMax = max(list3)
 absMin = min(list4)
