@@ -101,6 +101,12 @@ print('Increasing: x = [',round(list1[0],1),',',round(list1[len(list1)-1],1),']'
 print()
 print('Decreasing: x = [',round(list2[0],1),',',round(list2[len(list2)-1],1),']')
 
+for i in range(0,len(list1)):
+    if list1[i]-list1[i-1] > 0.1:
+        newList1 = list1[i:]
+        print('Increasing: x = [',round(newList1[0],1),',',round(newList1[len(newList1)-1],1),']')
 
-
-
+for i in range(0,len(list2)):
+    if list2[i]-list2[i-1] > 0.1:
+        newList2 = list2[i:]
+        print('Decreasing: x = [',round(newList2[0],1),',',round(newList2[len(newList2)-1],1),']')
