@@ -96,7 +96,9 @@ print('Local minimum(s) (ignore brackets): x =',list6)
 list1.sort()
 list2.sort()
 
+print()
 print('Increasing: x = [',round(list1[0],1),',',round(list1[len(list1)-1],1),']')
+print()
 print('Decreasing: x = [',round(list2[0],1),',',round(list2[len(list2)-1],1),']')
 
 
