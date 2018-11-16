@@ -16,6 +16,7 @@ list5 = []
 list6 = []
 list7 = []
 list8 = []
+list9 = []
 
 i = interval1-0.01
 while i <= interval2-0.01:
@@ -66,9 +67,9 @@ while i <= interval2-0.01:
         y = round(eval(function),2)
         list3.append(y)
         list5.append(i)
-    if derivative > 0:
+    if derivative >= 0:
         list1.append(i)
-    if derivative < 0:
+    if derivative <= 0:
         list2.append(i)
 
 absMax = max(list3)
