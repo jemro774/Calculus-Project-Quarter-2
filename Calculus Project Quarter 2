@@ -17,7 +17,6 @@ list6 = []
 list7 = []
 list8 = []
 list9 = []
-list10 = []
 
 i = interval1-0.01
 while i <= interval2-0.01:
@@ -26,75 +25,69 @@ while i <= interval2-0.01:
     more = eval(function)
     x = i-0.001
     less = eval(function)
+    x = i
+    m = 2*eval(function)
     derivative = round(((more-less)/0.002),1)
+    secondDerivative = round(((more-m+less)/(0.001**2)),1)
     x = i-0.009
     more1 = eval(function)
     x = i-0.011
     less1 = eval(function)
+    x = i-0.01
+    m1 = 2*eval(function)
     derivative1 = round(((more1-less1)/0.002),2)
+    secondDerivative1 = round(((more1-m1+less1)/(0.001**2)),2)
     x = i+0.011
     more2 = eval(function)
     x = i+0.009
     less2 = eval(function)
+    x = i+0.01
+    m2 = 2*eval(function)
     derivative2 = round(((more2-less2)/0.002),2)
+    secondDerivative2 = round(((more2-m2+less2)/(0.001**2)),2)
     if derivative == 0:
         if derivative1 > 0 and derivative2 < 0:
             x = i
-            y = round(eval(function),1)
+            y = eval(function)
             list3.append(y)
-            list5.append(i)
+            list5.append(round(i,1))
         elif derivative1 < 0 and derivative2 > 0:
             x = i
-            y = round(eval(function),1)
+            y = eval(function)
             list4.append(y)
-            list6.append(i)
+            list6.append(round(i,1))
     if i == interval1 and derivative2 < 0:
         x = interval1
-        y = round(eval(function),1)
+        y = eval(function)
         list3.append(y)
-        list5.append(i)
+        list5.append(round(i,1))
     elif i == interval1 and derivative2 > 0:
         x = interval1
-        y = round(eval(function),1)
+        y = eval(function)
         list4.append(y)
-        list6.append(i)
+        list6.append(round(i,1))
     elif i == interval2 and derivative1 < 0:
         x = interval2
-        y = round(eval(function),1)
+        y = eval(function)
         list4.append(y)
-        list6.append(i)
+        list6.append(round(i,1))
     elif i == interval2 and derivative1 > 0:
         x = interval2
-        y = round(eval(function),1)
+        y = eval(function)
         list3.append(y)
-        list5.append(i)
+        list5.append(round(i,1))
     if derivative >= 0:
         list1.append(i)
     if derivative <= 0:
         list2.append(i)
-    x = derivative+0.001
-    more3 = eval(function)
-    x = derivative-0.001
-    less3 = eval(function)
-    secondDerivative = round(((more3-less3)/0.002),1)
-    x = derivative-0.009
-    more4 = eval(function)
-    x = derivative-0.011
-    less4 = eval(function)
-    secondDerivative1 = round(((more4-less4)/0.002),2)
-    x = derivative+0.011
-    more5 = eval(function)
-    x = derivative+0.009
-    less5 = eval(function)
-    secondDerivative2 = round(((more5-less5)/0.002),2)
     if secondDerivative == 0:
         if secondDerivative1 > 0 and secondDerivative2 < 0:
-            list10.append(i)
+            list9.append(round(i,1))
         if secondDerivative1 < 0 and secondDerivative2 > 0:
-            list10.append(i)
+            list9.append(round(i,1))
     
 print()
-print('Point of inflection(s) (ignore brackets): x =',list10)
+print('Point of inflection(s) (ignore brackets): x =',list9)
 
 absMax = max(list3)
 absMin = min(list4)
@@ -121,27 +114,25 @@ list1.sort()
 list2.sort()
 
 newList1 = []
-for i in range(0,len(list1)):
-    if list1[i]-list1[i-1] > 0.1:
-        newList1 = list1[i:]
-        print()
-        print('Increasing: x = [',round(list1[0],1),',',round(list1[i-1],1),']')
-        print()
-        print('Increasing: x = [',round(newList1[0],1),',',round(newList1[len(newList1)-1],1),']')
-
-if len(newList1) == 0:
-    print()
-    print('Increasing: x = [',round(list1[0],1),',',round(list1[len(list1)-1],1),']')
-
 newList2 = []
-for i in range(0,len(list2)):
-    if list2[i]-list2[i-1] > 0.1:
-        newList2 = list2[i:]
-        print()
-        print('Decreasing: x = [',round(list2[0],1),',',round(list2[i-1],1),']')
-        print()
-        print('Decreasing: x = [',round(newList2[0],1),',',round(newList2[len(newList2)-1],1),']')
-
-if len(newList2) == 0:
-    print()
-    print('Decreasing: x = [',round(list2[0],1),',',round(list2[len(list2)-1],1),']')
+newList3 = []
+newList4 = []
+for i in range(1,len(list1)):
+    if list1[i]-list1[i-1] > 0.1:
+        newList1.append(list1[i]-list1[i-1])
+        if len(newList1) == 1:
+            newList2 = list1[i:]
+            print()
+            print('Increasing: x = [',round(list1[0],1),',',round(list1[i-1],1),']')
+            print()
+            print('Increasing: x = [',round(newList2[0],1),',',round(newList2[len(newList2)-1],1),']')
+        elif len(newList1) == 2:
+            newList2 = list1[i:]
+            print()
+            print('Increasing: x = [',round(list1[0],1),',',round(list1[i-1],1),']')
+            print()
+            for j in range(0,len(newList2)):
+                if newList2[j]-newList2[j-1] > 0.1:
+                    newList3.append(newList2[j]-newList2[j-1])
+                    if len(newList3) == 1:
+                        newList4 = newList2[j:]
