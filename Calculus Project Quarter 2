@@ -116,7 +116,7 @@ for i in range(0,len(list6)):
     list5.append(list6[i])
 list5.sort()
 
-for i in range(0,len(list5)):
+for i in range(0,len(list5)-1):
     x = list5[i]+0.101
     more4 = eval(function)
     x = list5[i]+0.099
@@ -129,15 +129,15 @@ for i in range(0,len(list5)):
     elif derivative4 < 0:
         print('Decreasing: x = [',list5[i],',',list5[i+1],']')
         print()
-for i in range(0,len(list5)):
-    x = list5[i]+0.101
+for i in range(0,len(list10)-1):
+    x = list10[i]+0.101
     more4 = eval(function)
-    x = list5[i]+0.099
+    x = list10[i]+0.099
     less4 = eval(function)
-    x = list5[i]+0.1
+    x = list10[i]+0.1
     m4 = 2*eval(function)
     secondDerivative4 = round(((more4-m4+less4)/(0.001**2)),2)
-    elif secondDerivative4 > 0:
+    if secondDerivative4 > 0:
         print('Concave up: x = [',list5[i],',',list5[i+1],']')
         print()
     elif secondDerivative4 < 0:
