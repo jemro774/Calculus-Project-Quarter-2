@@ -110,29 +110,20 @@ print('Absolute minimum(s) (ignore brackets): x =',list8)
 print()
 print('Local minimum(s) (ignore brackets): x =',list6)
 
-list1.sort()
-list2.sort()
+for i in range(0,len(list6)):
+    list5.append(list6[i])
+list5.sort()
 
-newList1 = []
-newList2 = []
-newList3 = []
-newList4 = []
-for i in range(1,len(list1)):
-    if list1[i]-list1[i-1] > 0.1:
-        newList1.append(list1[i]-list1[i-1])
-        if len(newList1) == 1:
-            newList2 = list1[i:]
-            print()
-            print('Increasing: x = [',round(list1[0],1),',',round(list1[i-1],1),']')
-            print()
-            print('Increasing: x = [',round(newList2[0],1),',',round(newList2[len(newList2)-1],1),']')
-        elif len(newList1) == 2:
-            newList2 = list1[i:]
-            print()
-            print('Increasing: x = [',round(list1[0],1),',',round(list1[i-1],1),']')
-            print()
-            for j in range(0,len(newList2)):
-                if newList2[j]-newList2[j-1] > 0.1:
-                    newList3.append(newList2[j]-newList2[j-1])
-                    if len(newList3) == 1:
-                        newList4 = newList2[j:]
+for i in range(0,len(list5)):
+    x = list5[i]+0.011
+    more4 = eval(function)
+    x = list5[i]+0.009
+    less4 = eval(function)
+    x = list5[i]+0.01
+    m4 = 2*eval(function)
+    derivative4 = round(((more4-less4)/0.002),2)
+    secondDerivative4 = round(((more4-m4+less4)/(0.001**2)),2)
+    if derivative4 > 0:
+        print('Increasing: x = [',list5[i],',',list5[i+1],']')
+    if derivative4 < 0:
+        print('Decreasing: x = [',list5[i],',',list5[i+1],']')
