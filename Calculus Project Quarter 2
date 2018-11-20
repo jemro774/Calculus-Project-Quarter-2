@@ -100,7 +100,6 @@ for k in range(0,len(list4)):
     if list4[k] == absMin:
         e = k
         list8.append(round(list6[e],1))
-print()
 print('Absolute minimum(s) (ignore brackets): x =',list8)
 print()
 print('Local minimum(s) (ignore brackets): x =',list6)
