@@ -8,8 +8,6 @@ function = input('Enter a function: ')
 interval1 = int(input('Enter the first value of the closed interval: '))
 interval2 = int(input('Enter the last value of the closed interval: '))
 
-list1 = []
-list2 = []
 list3 = []
 list4 = []
 list5 = []
@@ -76,10 +74,6 @@ while i <= interval2-0.01:
         y = eval(function)
         list3.append(y)
         list5.append(round(i,1))
-    if derivative >= 0:
-        list1.append(i)
-    if derivative <= 0:
-        list2.append(i)
     if secondDerivative == 0:
         if secondDerivative1 > 0 and secondDerivative2 < 0:
             list9.append(round(i,1))
