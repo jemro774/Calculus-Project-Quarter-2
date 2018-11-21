@@ -46,32 +46,32 @@ while i <= interval2-0.01:
     if derivative == 0:
         if derivative1 > 0 and derivative2 < 0:
             x = i
-            y = eval(function)
+            y = round(eval(function),2)
             list3.append(y)
             list5.append(round(i,1))
         elif derivative1 < 0 and derivative2 > 0:
             x = i
-            y = eval(function)
+            y = round(eval(function),2)
             list4.append(y)
             list6.append(round(i,1))
     if i == interval1 and derivative2 < 0:
         x = interval1
-        y = eval(function)
+        y = round(eval(function),2)
         list3.append(y)
         list5.append(round(i,1))
     elif i == interval1 and derivative2 > 0:
         x = interval1
-        y = eval(function)
+        y = round(eval(function),2)
         list4.append(y)
         list6.append(round(i,1))
     elif i == interval2 and derivative1 < 0:
         x = interval2
-        y = eval(function)
+        y = round(eval(function),2)
         list4.append(y)
         list6.append(round(i,1))
     elif i == interval2 and derivative1 > 0:
         x = interval2
-        y = eval(function)
+        y = round(eval(function),2)
         list3.append(y)
         list5.append(round(i,1))
     if secondDerivative == 0:
