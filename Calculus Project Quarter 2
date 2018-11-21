@@ -5,8 +5,9 @@
 from math import *
 
 function = input('Enter a function: ')
-interval1 = int(input('Enter the first value of the closed interval: '))
-interval2 = int(input('Enter the last value of the closed interval: '))
+
+interval1 = float(input('Enter the first value of the closed interval: '))
+interval2 = float(input('Enter the last value of the closed interval: '))
 
 list3 = []
 list4 = []
@@ -23,26 +24,50 @@ while i <= interval2-0.01:
     more = eval(function)
     x = i-0.001
     less = eval(function)
-    x = i
-    m = 2*eval(function)
     derivative = round(((more-less)/0.002),1)
-    secondDerivative = round(((more-m+less)/(0.001**2)),1)
+    x = i+0.0011
+    sMore = eval(function)
+    x = i+0.0009
+    sLess = eval(function)
+    sDerivative = ((sMore-sLess)/0.0002)
+    x = i-0.0009
+    sMore1 = eval(function)
+    x = i-0.0011
+    sLess1 = eval(function)
+    sDerivative1 = ((sMore1-sLess1)/0.0002)
+    secondDerivative = round(((sDerivative-sDerivative1)/0.002),1)
     x = i-0.009
     more1 = eval(function)
     x = i-0.011
     less1 = eval(function)
-    x = i-0.01
-    m1 = 2*eval(function)
     derivative1 = round(((more1-less1)/0.002),2)
-    secondDerivative1 = round(((more1-m1+less1)/(0.001**2)),2)
+    x = i-0.0089
+    sMore2 = eval(function)
+    x = i-0.0091
+    sLess2 = eval(function)
+    sDerivative2 = ((sMore2-sLess2)/0.0002)
+    x = i-0.0109
+    sMore3 = eval(function)
+    x = i-0.0111
+    sLess3 = eval(function)
+    sDerivative3 = ((sMore3-sLess3)/0.0002)
+    secondDerivative1 = round(((sDerivative2-sDerivative3)/0.002),1)
     x = i+0.011
     more2 = eval(function)
     x = i+0.009
     less2 = eval(function)
-    x = i+0.01
-    m2 = 2*eval(function)
     derivative2 = round(((more2-less2)/0.002),2)
-    secondDerivative2 = round(((more2-m2+less2)/(0.001**2)),2)
+    x = i+0.00111
+    sMore4 = eval(function)
+    x = i+0.00109
+    sLess4 = eval(function)
+    sDerivative4 = ((sMore4-sLess4)/0.0002)
+    x = i+0.0091
+    sMore5 = eval(function)
+    x = i+0.0089
+    sLess5 = eval(function)
+    sDerivative5 = ((sMore5-sLess5)/0.0002)
+    secondDerivative2 = round(((sDerivative4-sDerivative5)/0.002),1)
     if derivative == 0:
         if derivative1 > 0 and derivative2 < 0:
             x = i
@@ -128,16 +153,20 @@ list9.append(interval2)
 list9.sort()
 
 for i in range(0,len(list9)-1):
-    x = list9[i]+0.101
-    more4 = eval(function)
-    x = list9[i]+0.099
-    less4 = eval(function)
-    x = list9[i]+0.1
-    m4 = 2*eval(function)
-    secondDerivative4 = round(((more4-m4+less4)/(0.001**2)),2)
-    if secondDerivative4 > 0:
-        print('Concave up: x = [',list9[i],',',list9[i+1],']')
-        print()
-    elif secondDerivative4 < 0:
+    x = list9[i]+0.1011
+    sMore6 = eval(function)
+    x = list9[i]+0.1009
+    sLess6 = eval(function)
+    sDerivative6 = ((sMore6-sLess6)/0.0002)
+    x = list9[i]+0.0991
+    sMore7 = eval(function)
+    x = list9[i]-0.0989
+    sLess7 = eval(function)
+    sDerivative7 = ((sMore7-sLess7)/0.0002)
+    secondDerivative3 = round(((sDerivative6-sDerivative7)/0.002),1)
+    if secondDerivative3 > 0:
         print('Concave down: x = [',list9[i],',',list9[i+1],']')
+        print()
+    elif secondDerivative3 < 0:
+        print('Concave up: x = [',list9[i],',',list9[i+1],']')
         print()
